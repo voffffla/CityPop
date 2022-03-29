@@ -11,6 +11,7 @@ import type { StackScreenProps } from '@react-navigation/stack';
 export type RootStackParamList = {
     HomeScreen: undefined
     SearchCity: undefined
+    SearchCountry: undefined
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =

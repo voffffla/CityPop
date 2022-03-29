@@ -20,7 +20,7 @@ export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScr
             <TextContainer value="Search by city" />
         </TouchableOpacity>
 
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.navigate("SearchCountry")}>
             <TextContainer value='Search by country'/>
         </TouchableOpacity>
 
