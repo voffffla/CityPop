@@ -16,7 +16,7 @@ export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScr
     <View style={tw.style("flex-1 items-center justify-center")}>
         <Text> CityPop </Text>
 
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.navigate("SearchCity")}>
             <TextContainer value="Search by city" />
         </TouchableOpacity>
 

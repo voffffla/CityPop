@@ -10,6 +10,7 @@ import type { StackScreenProps } from '@react-navigation/stack';
 //all the screens / tabs and thier parameters
 export type RootStackParamList = {
     HomeScreen: undefined
+    SearchCity: undefined
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
