@@ -2,9 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { RootStackScreenProps } from '../navigation/NavigationTypes';
 import tw from 'twrnc';
+import TextContainer from '../components/TextContainer';
 
-
-export default function HomeScreen({ }: RootStackScreenProps<"HomeScreen">) {
+/**
+ * Homescreen that is shown at the start of the app
+ * @param navigation component that comes with the stacknavigator 
+ * @returns Homescreen view
+ */
+export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScreen">) {
     
   
   return (
@@ -12,11 +17,11 @@ export default function HomeScreen({ }: RootStackScreenProps<"HomeScreen">) {
         <Text> CityPop </Text>
 
         <TouchableOpacity >
-          <Text> Search by city </Text>
+            <TextContainer value="Search by city" />
         </TouchableOpacity>
 
         <TouchableOpacity >
-          <Text> Search by country </Text>
+            <TextContainer value='Search by country'/>
         </TouchableOpacity>
 
         <StatusBar style="auto" />
