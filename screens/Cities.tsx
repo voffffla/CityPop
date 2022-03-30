@@ -21,7 +21,7 @@ interface City{
 export default function Cities({ navigation, route }: RootStackScreenProps<"Cities">) {
     const [loading, setLoading] = useState<boolean>(true)
 
-    const [data, setData] = useState< Array<City>>([]);
+    const [cities, setCities] = useState< Array<City>>([]);
 
     const getCities = async () => {
         try {
@@ -41,7 +41,7 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
             if (element["countryName"].toLowerCase() === route.params["country"].toLowerCase()) {
                 i++
                     
-                setData(prevData => 
+                setCities(prevData => 
                     prevData.concat({name: element["name"].toString(), key: Math.random().toString()}))                
                 
             }
@@ -64,7 +64,7 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
         
     } else {
         
-        if(data.length != 0){
+        if(cities.length != 0){
             return (
                 
                 
@@ -75,10 +75,10 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
 
                     <View style={tw.style("mb-85 ")}>
                         <FlatList
-                            data={data}
+                            data={cities}
                             renderItem={({ item }) => (
                                 <TouchableOpacity style={tw.style("m-1 ")} 
-                                >
+                                onPress = {() => navigation.navigate("CityPopulation", {city: item.name})}>
                                     <TextContainer value={item.name}/>
                                 </TouchableOpacity>
                             

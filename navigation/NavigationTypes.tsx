@@ -13,6 +13,7 @@ export type RootStackParamList = {
     SearchCity: undefined
     SearchCountry: undefined
     Cities: {country: string}
+    CityPopulation: {city: string}
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =

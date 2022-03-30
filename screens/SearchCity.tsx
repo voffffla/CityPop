@@ -35,7 +35,7 @@ export default function SearchCity({ navigation }: RootStackScreenProps<"SearchC
 
             <TouchableOpacity
              style={tw.style("mb-20 mt-4 border-2 rounded-full ")}
-             >
+             onPress = {() => navigation.navigate("CityPopulation", {city: text})}>
                 <Image
                 source={require("../assets/magnify.png")}
                   style={tw.style("w-15 h-15")} 
