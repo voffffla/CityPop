@@ -13,17 +13,22 @@ export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScr
     
   
   return (
-    <View style={tw.style("flex-1 items-center justify-center")}>
-        <Text> CityPop </Text>
-
+    <View style={tw.style("flex-1 items-center justify-center	")}>
+      <View style={tw.style("mb-35 ")}>
+        <Text style={tw.style("text-4xl italic text-blue-800")}> CityPop </Text>
+      </View>
+        
+      <View style={tw.style("my-4 ")}>
         <TouchableOpacity onPress={() => navigation.navigate("SearchCity")}>
-            <TextContainer value="Search by city" />
+          <TextContainer value="Search by city" />
         </TouchableOpacity>
+      </View>
 
+      <View style={tw.style("mb-40 ")}>
         <TouchableOpacity onPress={() => navigation.navigate("SearchCountry")}>
-            <TextContainer value='Search by country'/>
+          <TextContainer value='Search by country'/>
         </TouchableOpacity>
-
+      </View>
         <StatusBar style="auto" />
     </View>
     );
