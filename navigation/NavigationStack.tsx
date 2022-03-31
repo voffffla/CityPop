@@ -13,7 +13,7 @@ export default function NavStack(){
     return (
         <RootStack.Navigator initialRouteName='HomeScreen'>
             <RootStack.Screen name="HomeScreen" component={HomeScreen} options={{ title: '' , headerStyle: {
-            backgroundColor: '#2563eb',
+            backgroundColor: '#7c3aed',
           }}}/>
 
             <RootStack.Screen name="SearchCity" component={SearchCity} options={{ title: '' , headerStyle: {

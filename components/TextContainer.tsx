@@ -13,8 +13,8 @@ type Props = {
  */
 export default function TextContainer ({value}:Props) {
     return (
-      <View style={tw.style("bg-transparent p-4 border-2 border-blue-500 rounded min-w-11/12 items-center ")}>
-          <Text style={tw.style("text-2xl italic text-blue-500")}> {value} </Text>
+      <View style={tw.style("bg-transparent p-4 border-2 border-violet-600 rounded min-w-11/12 items-center ")}>
+          <Text style={tw.style("text-2xl italic text-violet-400")}> {value} </Text>
       </View>
     );
   }

@@ -13,9 +13,9 @@ export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScr
     
   
   return (
-    <View style={tw.style("flex-1 items-center justify-center	")}>
+    <View style={tw.style("flex-1 items-center justify-center bg-gray-800	")}>
       <View style={tw.style("mb-35 ")}>
-        <Text style={tw.style("text-4xl italic text-blue-800")}> CityPop </Text>
+        <Text style={tw.style("text-4xl italic text-violet-400")}> CityPop </Text>
       </View>
         
       <View style={tw.style("my-4 ")}>
