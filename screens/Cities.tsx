@@ -32,6 +32,7 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
         const json: any = await response.json();
         var i:number = 0;
         
+        if (json["geonames"].length != 0) {
         for(var element of json["geonames"]){ // for of so the loop can be broken
             setLoading(false)
             if (i > 10) {
@@ -46,6 +47,9 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
                 
             }
         }
+    }else{
+        setLoading(false)
+    }
             
         } catch (error) {
         console.error(error);

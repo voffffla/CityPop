@@ -24,9 +24,10 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
         );
                 
         const json = await response.json();
-        
+        if (json["geonames"].length != 0) {
+    
         for(var element of json["geonames"]){
-            setLoading(false)    
+            setLoading(false)            
             
             if (element["name"].toLowerCase() === route.params["city"].toLowerCase()) {
                     
@@ -35,7 +36,9 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
                 
             }
         }
-            
+    }else{
+        setLoading(false)
+    }
         } catch (error) {
         console.error(error);
         }
