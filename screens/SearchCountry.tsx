@@ -21,13 +21,13 @@ export default function SearchCountry({ navigation }: RootStackScreenProps<"Sear
   
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-        <View style={tw.style("flex-1 items-center justify-center")}>
+        <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
             <View style={tw.style("mb-35 ")}>
-                <Text style={tw.style("text-4xl italic text-blue-800")}> Search by country </Text>
+                <Text style={tw.style("text-4xl italic text-violet-400")}> Search by country </Text>
             </View>
 
             <TextInput 
-            style={tw.style("border-2 border-blue-500 min-w-11/12 items-center text-lg p-4")}
+            style={tw.style("border-2 border-violet-600 min-w-11/12 items-center text-lg p-4 text-violet-400")}
             textAlign={'center'}
             placeholder='Enter a country'
             onChangeText={changeHandler}
@@ -35,7 +35,7 @@ export default function SearchCountry({ navigation }: RootStackScreenProps<"Sear
             />
 
             <TouchableOpacity 
-            style={tw.style("mb-20 mt-4 border-2 rounded-full ")}
+            style={tw.style("mb-20 mt-4 border-2 rounded-full border-violet-600 ")}
             onPress={() => navigation.navigate("Cities", {country: text})}
             >
                 <Image

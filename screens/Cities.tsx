@@ -55,8 +55,8 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
     if (loading) {
         getCities()
         return(
-            <View style={tw.style("flex-1 items-center justify-center")}>
-                <ActivityIndicator size="large" color="#2563eb"/>
+            <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
+                <ActivityIndicator size="large" color="#7c3aed"/>
             </View>
             
         );
@@ -68,9 +68,9 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
             return (
                 
                 
-                <View style={tw.style("flex-1 items-center ")}>
+                <View style={tw.style("flex-1 items-center bg-gray-800")}>
                     <View style={tw.style("my-30 ")}>
-                        <Text style={tw.style("text-4xl italic text-blue-800")}> {route.params["country"].toUpperCase()} </Text>
+                        <Text style={tw.style("text-4xl italic text-violet-400")}> {route.params["country"].toUpperCase()} </Text>
                     </View>
 
                     <View style={tw.style("mb-85 ")}>
@@ -92,8 +92,8 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
                 );
         } else{
             return(
-                <View style={tw.style("flex-1 items-center justify-center")}>
-                    <Text style={tw.style("text-4xl italic text-black")}>No country found</Text>
+                <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
+                    <Text style={tw.style("text-4xl italic text-violet-400")}>No country found</Text>
                 </View>
             );
             

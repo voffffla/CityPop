@@ -45,8 +45,8 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
     if (loading) {
         getPopulation()
         return(
-            <View style={tw.style("flex-1 items-center justify-center")}>
-                <ActivityIndicator size="large" color="#2563eb"/>
+            <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
+                <ActivityIndicator size="large" color="#7c3aed"/>
             </View>
             
         );
@@ -58,13 +58,13 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
             return (
                 
                 
-                <View style={tw.style("flex-1 items-center justify-center")}>
+                <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
                     <View style={tw.style("mb-35 ")}>
-                        <Text style={tw.style("text-4xl italic text-blue-800")}> {route.params["city"].toUpperCase()} </Text>
+                        <Text style={tw.style("text-4xl italic text-violet-400")}> {route.params["city"].toUpperCase()} </Text>
                     </View>
-                    <View style={tw.style("bg-transparent border-2 border-blue-500 rounded min-w-11/12 items-center mb-30")}>
-                        <Text style={tw.style("text-lg italic text-black mb-3")}>Population</Text>
-                        <Text style={tw.style("text-4xl italic text-blue-500 mb-3")}> {population} </Text>
+                    <View style={tw.style("bg-transparent border-2 border-violet-600 rounded min-w-11/12 items-center mb-30")}>
+                        <Text style={tw.style("text-lg italic text-violet-400 mb-3")}>Population</Text>
+                        <Text style={tw.style("text-4xl italic text-violet-400 mb-3")}> {population} </Text>
                     </View>
                     
    
@@ -73,8 +73,8 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
                 );
         } else{
             return(
-                <View style={tw.style("flex-1 items-center justify-center")}>
-                <Text style={tw.style("text-4xl italic text-black")}>No city found</Text>
+                <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
+                <Text style={tw.style("text-4xl italic text-violet-400")}>No city found</Text>
             </View>
             );
             

@@ -17,19 +17,19 @@ export default function NavStack(){
           }}}/>
 
             <RootStack.Screen name="SearchCity" component={SearchCity} options={{ title: '' , headerStyle: {
-            backgroundColor: '#2563eb',
+            backgroundColor: '#7c3aed',
           }}}/>
 
             <RootStack.Screen name="SearchCountry" component={SearchCountry} options={{ title: '' , headerStyle: {
-            backgroundColor: '#2563eb',
+            backgroundColor: '#7c3aed',
           }}}/>
 
             <RootStack.Screen name="Cities" component={Cities} options={{ title: '' , headerStyle: {
-            backgroundColor: '#2563eb',
+            backgroundColor: '#7c3aed',
           }}}/>
 
             <RootStack.Screen name="CityPopulation" component={CityPopulation} options={{ title: '' , headerStyle: {
-            backgroundColor: '#2563eb',
+            backgroundColor: '#7c3aed',
           }}}/> 
         </RootStack.Navigator>
     )
