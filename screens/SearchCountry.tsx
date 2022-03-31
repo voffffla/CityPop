@@ -36,7 +36,7 @@ export default function SearchCountry({ navigation }: RootStackScreenProps<"Sear
 
             <TouchableOpacity 
             style={tw.style("mb-20 mt-4 border-2 rounded-full border-violet-600 ")}
-            onPress={() => navigation.navigate("Cities", {country: text})}
+            onPress={() => navigation.navigate("Cities", {country: text.trim()})}
             >
                 <Image
                 source={require("../assets/magnify.png")}
