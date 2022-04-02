@@ -7,13 +7,13 @@ import { RootStackScreenProps } from '../navigation/NavigationTypes';
 
 
 /**
- * Search screem that is shown when searching by a country
- * @param navigation component that comes with the stacknavigator 
+ * Search screen that is shown when searching by a country
+ * @param navigation component that comes with the stacknavigator to navigate to another screen
  * @returns search screen for countries
  */
 export default function SearchCountry({ navigation }: RootStackScreenProps<"SearchCountry">) {
 
-    const [text, setText] = useState<string>("");
+    const [text, setText] = useState<string>(""); //To easly extract the content of the TextInput
 
     const changeHandler = (value: string) => {
         setText(value);

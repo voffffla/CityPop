@@ -6,6 +6,12 @@ import SearchCity from '../screens/SearchCity';
 import SearchCountry from '../screens/SearchCountry';
 import { RootStackParamList } from './NavigationTypes';
 
+
+/**
+ * Function that creates a stack navigator for navigating in the app.
+ * The start page is HomeScreen
+ * @returns StackNavigator
+ */
 export default function NavStack(){
 
     const RootStack = createStackNavigator<RootStackParamList>();

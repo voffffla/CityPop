@@ -7,9 +7,9 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
 
 
 /**
- * Search screem that shows the cities with the highest population in a country
+ * Search result screen that shows the population in the specified city
  * @param route component that comes with the stacknavigator to get parameters sent from previous screen
- * @returns screen that shoiw a city and its population
+ * @returns screen that shows a city and its population
  */
 
  export default function CityPopulation({ route }: RootStackScreenProps<"CityPopulation">) {
@@ -26,19 +26,19 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
         const json = await response.json();
         if (json["geonames"].length != 0) {
     
-        for(var element of json["geonames"]){
-            setLoading(false)            
-            
-            if (element["name"].toLowerCase() === route.params["city"].toLowerCase()) {
-                    
-                setPopulation(element["population"])
-                break
+            for(var element of json["geonames"]){
+                setLoading(false)            
                 
+                if (element["name"].toLowerCase() === route.params["city"].toLowerCase()) {
+                        
+                    setPopulation(element["population"])
+                    break
+                    
+                }
             }
+        }else{
+            setLoading(false)
         }
-    }else{
-        setLoading(false)
-    }
         } catch (error) {
         console.error(error);
         }

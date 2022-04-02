@@ -13,8 +13,8 @@ interface City{
 }
 
 /**
- * Search screem that shows the cities with the highest population in a country
- * @param navigation component that comes with the stacknavigator 
+ * Search result screen that shows the cities with the highest population in a country
+ * @param navigation component that comes with the stacknavigator to navigate to another screen 
  * @param route component that comes with the stacknavigator to get parameters sent from previous screen
  * @returns screen showing cities in the specified country in order of highest population
  */
@@ -30,26 +30,27 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
         );
                 
         const json: any = await response.json();
-        var i:number = 0;
+        
+        var i: number = 0; // Variable to keep track of how many cities to display
         
         if (json["geonames"].length != 0) {
-        for(var element of json["geonames"]){ // for of so the loop can be broken
-            setLoading(false)
-            if (i > 10) {
-                
-                break
-            }else
-            if (element["countryName"].toLowerCase() === route.params["country"].toLowerCase()) {
-                i++
+            for(var element of json["geonames"]){ // for of so the loop can be broken
+                setLoading(false)
+                if (i > 10) {
                     
-                setCities(prevData => 
-                    prevData.concat({name: element["name"].toString(), key: Math.random().toString()}))                
-                
+                    break
+                }else
+                if (element["countryName"].toLowerCase() === route.params["country"].toLowerCase()) {
+                    i++
+                        
+                    setCities(prevData => 
+                        prevData.concat({name: element["name"].toString(), key: Math.random().toString()}))                
+                    
+                }
             }
+        }else{
+            setLoading(false)
         }
-    }else{
-        setLoading(false)
-    }
             
         } catch (error) {
         console.error(error);

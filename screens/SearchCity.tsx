@@ -6,13 +6,13 @@ import { RootStackScreenProps } from '../navigation/NavigationTypes';
 
 /**
  * Search screen that is show when searching by a city
- * @param navigation component that comes with the stacknavigator 
+ * @param navigation component that comes with the stacknavigator to navigate to another screen
  * @returns search screen for cities
  */
 export default function SearchCity({ navigation }: RootStackScreenProps<"SearchCity">) {
     
 
-    const [text, setText] = useState<string>("");
+    const [text, setText] = useState<string>(""); //To easly extract the content of the TextInput
 
     const changeHandler = (value: string) => {
         setText(value);
