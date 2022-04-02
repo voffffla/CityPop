@@ -13,8 +13,8 @@ interface City{
 }
 
 /**
- * Search screem that shows the cities with the highest population in a country
- * @param navigation component that comes with the stacknavigator 
+ * Search result screen that shows the cities with the highest population in a country
+ * @param navigation component that comes with the stacknavigator to navigate to another screen 
  * @param route component that comes with the stacknavigator to get parameters sent from previous screen
  * @returns screen showing cities in the specified country in order of highest population
  */
@@ -30,21 +30,26 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
         );
                 
         const json: any = await response.json();
-        var i:number = 0;
         
-        for(var element of json["geonames"]){ // for of so the loop can be broken
-            setLoading(false)
-            if (i > 10) {
-                
-                break
-            }else
-            if (element["countryName"].toLowerCase() === route.params["country"].toLowerCase()) {
-                i++
+        var i: number = 0; // Variable to keep track of how many cities to display
+        
+        if (json["geonames"].length != 0) {
+            for(var element of json["geonames"]){ // for of so the loop can be broken
+                setLoading(false)
+                if (i > 10) {
                     
-                setCities(prevData => 
-                    prevData.concat({name: element["name"].toString(), key: Math.random().toString()}))                
-                
+                    break
+                }else
+                if (element["countryName"].toLowerCase() === route.params["country"].toLowerCase()) {
+                    i++
+                        
+                    setCities(prevData => 
+                        prevData.concat({name: element["name"].toString(), key: Math.random().toString()}))                
+                    
+                }
             }
+        }else{
+            setLoading(false)
         }
             
         } catch (error) {
@@ -55,8 +60,8 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
     if (loading) {
         getCities()
         return(
-            <View style={tw.style("flex-1 items-center justify-center")}>
-                <ActivityIndicator size="large" color="#2563eb"/>
+            <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
+                <ActivityIndicator size="large" color="#7c3aed"/>
             </View>
             
         );
@@ -68,9 +73,9 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
             return (
                 
                 
-                <View style={tw.style("flex-1 items-center ")}>
+                <View style={tw.style("flex-1 items-center bg-gray-800")}>
                     <View style={tw.style("my-30 ")}>
-                        <Text style={tw.style("text-4xl italic text-blue-800")}> {route.params["country"].toUpperCase()} </Text>
+                        <Text style={tw.style("text-4xl italic text-violet-400")}> {route.params["country"].toUpperCase()} </Text>
                     </View>
 
                     <View style={tw.style("mb-85 ")}>
@@ -92,8 +97,8 @@ export default function Cities({ navigation, route }: RootStackScreenProps<"Citi
                 );
         } else{
             return(
-                <View style={tw.style("flex-1 items-center justify-center")}>
-                    <Text style={tw.style("text-4xl italic text-black")}>No country found</Text>
+                <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>
+                    <Text style={tw.style("text-4xl italic text-violet-400")}>No country found</Text>
                 </View>
             );
             

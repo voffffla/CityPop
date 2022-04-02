@@ -6,16 +6,15 @@ import TextContainer from '../components/TextContainer';
 
 /**
  * Homescreen that is shown at the start of the app
- * @param navigation component that comes with the stacknavigator 
+ * @param navigation component that comes with the stacknavigator to navigate to another screen
  * @returns Homescreen view
  */
 export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScreen">) {
-    
-  
+   
   return (
-    <View style={tw.style("flex-1 items-center justify-center	")}>
+    <View style={tw.style("flex-1 items-center justify-center bg-gray-800	")}>
       <View style={tw.style("mb-35 ")}>
-        <Text style={tw.style("text-4xl italic text-blue-800")}> CityPop </Text>
+        <Text style={tw.style("text-4xl italic text-violet-400")}> CityPop </Text>
       </View>
         
       <View style={tw.style("my-4 ")}>

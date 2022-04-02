@@ -4,11 +4,11 @@
     "slug": "CityPop",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/city-pop-icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/city-pop-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1F2937"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
