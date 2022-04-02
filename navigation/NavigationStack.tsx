@@ -22,19 +22,19 @@ export default function NavStack(){
             backgroundColor: '#7c3aed',
           }}}/>
 
-            <RootStack.Screen name="SearchCity" component={SearchCity} options={{ title: '' , headerStyle: {
+            <RootStack.Screen name="SearchCity" component={SearchCity} options={{ title: 'CityPop' , headerStyle: {
             backgroundColor: '#7c3aed',
           }}}/>
 
-            <RootStack.Screen name="SearchCountry" component={SearchCountry} options={{ title: '' , headerStyle: {
+            <RootStack.Screen name="SearchCountry" component={SearchCountry} options={{ title: 'CityPop' , headerStyle: {
             backgroundColor: '#7c3aed',
           }}}/>
 
-            <RootStack.Screen name="Cities" component={Cities} options={{ title: '' , headerStyle: {
+            <RootStack.Screen name="Cities" component={Cities} options={{ title: 'CityPop' , headerStyle: {
             backgroundColor: '#7c3aed',
           }}}/>
 
-            <RootStack.Screen name="CityPopulation" component={CityPopulation} options={{ title: '' , headerStyle: {
+            <RootStack.Screen name="CityPopulation" component={CityPopulation} options={{ title: 'CityPop' , headerStyle: {
             backgroundColor: '#7c3aed',
           }}}/> 
         </RootStack.Navigator>
