@@ -13,7 +13,7 @@ import TextContainer from '../components/TextContainer';
 export default function Login({ navigation }: RootStackScreenProps<"Login">) {
     
 
-    const [username, setUsername] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
   
     return (
@@ -27,9 +27,9 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
                 <TextInput 
                 style={tw.style("border-2 border-violet-600 min-w-11/12 items-center text-lg p-4 text-violet-400")}
                 textAlign={'center'}
-                placeholder='Username'
-                onChangeText={(value: string) => setUsername(value)}
-                value={username} 
+                placeholder='Email'
+                onChangeText={(value: string) => setEmail(value)}
+                value={email} 
                 />
 
                 <TextInput 
