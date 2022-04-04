@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import {TouchableWithoutFeedback, Keyboard, View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
+import {TouchableWithoutFeedback, Keyboard, View, Text, TouchableOpacity, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import tw from 'twrnc';
 import { RootStackScreenProps } from '../navigation/NavigationTypes';
 import TextContainer from '../components/TextContainer';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, getAuth, connectAuthEmulator} from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, User} from 'firebase/auth';
 import {auth } from '../firebase';
 
 /**
@@ -23,13 +23,13 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
         console.log(auth);
         
         createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential: { user: any; }) => {
+        .then((userCredential: { user: User; }) => {
             console.log(userCredential.user);
             
             const user = userCredential.user;
             console.log(user);
         })
-        .catch((error: { code: any; message: any; }) => {
+        .catch((error: { code: string; message: string; }) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
@@ -40,12 +40,12 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
 
     const handleSignIn = () => {
         signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential: { user: any; }) => {
+        .then((userCredential: { user: User; }) => {
             const user = userCredential.user;
             console.log(user);
             
         })
-        .catch((error: { code: any; message: any; }) => {
+        .catch((error: { code: string; message: string; }) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
