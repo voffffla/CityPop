@@ -6,6 +6,7 @@ import { RootStackScreenProps } from '../navigation/NavigationTypes';
 import TextContainer from '../components/TextContainer';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, User} from 'firebase/auth';
 import {auth } from '../firebase';
+import Toast from 'react-native-toast-message';
 
 /**
  * Login screen before use of app
@@ -18,21 +19,19 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    const handleSignUp = () => {
-        console.log("test");
-        console.log(auth);
-        
+    const handleSignUp = () => {    
         createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential: { user: User; }) => {
-            console.log(userCredential.user);
-            
+        .then((userCredential: { user: User; }) => {            
             const user = userCredential.user;
             console.log(user);
         })
-        .catch((error: { code: string; message: string; }) => {
+        .catch((error: { code: string;}) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage);
+            Toast.show({
+                type: "error",
+                text1: "Error",
+                text2: errorCode.replace("auth/", "")
+            })
             
             
         });
@@ -45,10 +44,13 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
             console.log(user);
             
         })
-        .catch((error: { code: string; message: string; }) => {
+        .catch((error: { code: string; }) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage);
+            Toast.show({
+                type: "error",
+                text1: "Error",
+                text2: errorCode.replace("auth/", ""),
+            })
 
         });
 
