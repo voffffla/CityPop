@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { RootStackScreenProps } from '../navigation/NavigationTypes';
 import tw from 'twrnc';
 import TextContainer from '../components/TextContainer';
+import Toast from 'react-native-toast-message';
+import { auth } from '../firebase';
 
 /**
  * Homescreen that is shown at the start of the app
@@ -10,8 +12,23 @@ import TextContainer from '../components/TextContainer';
  * @returns Homescreen view
  */
 export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScreen">) {
-    
+  const userEmail = auth.currentUser?.email
+
+  if (userEmail) {
+    Toast.show({
+      type: "success",
+      text1: "Welcome",
+      text2: userEmail
+    })
+  }else{
+    Toast.show({
+      type: "error",
+      text1: "Error",
+      text2: "User email not found"
+    })
+  }
   
+
   return (
     <View style={tw.style("flex-1 items-center justify-center bg-gray-800	")}>
       <View style={tw.style("mb-35 ")}>

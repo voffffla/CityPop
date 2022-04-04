@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import {TouchableWithoutFeedback, Keyboard, View, Text, TouchableOpacity, TextInput } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import tw from 'twrnc';
 import { RootStackScreenProps } from '../navigation/NavigationTypes';
 import TextContainer from '../components/TextContainer';
@@ -18,6 +18,16 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
 
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+          if (user) {
+            navigation.replace("HomeScreen")
+          }
+        })
+    
+        return unsubscribe
+      }, [])
 
     const handleSignUp = () => {    
         createUserWithEmailAndPassword(auth, email, password)
