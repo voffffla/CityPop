@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import HeaderButton from '../components/HeaderButton';
+import LogoutButton from '../components/LogoutButton';
 import Cities from '../screens/Cities';
 import CityPopulation from '../screens/CityPopulation';
 import HomeScreen from '../screens/HomeScreen';
@@ -19,23 +19,23 @@ export default function NavStack(){
 
             <RootStack.Screen name="HomeScreen" component={HomeScreen} options={{ title: '' , headerStyle: {
             backgroundColor: '#7c3aed',
-          } , headerRight: () => <HeaderButton/>}}/>
+          } , headerRight: () => <LogoutButton/>}}/>
 
             <RootStack.Screen name="SearchCity" component={SearchCity} options={{ title: '' , headerStyle: {
             backgroundColor: '#7c3aed',
-          }, headerRight: () => <HeaderButton/>}}/>
+          }, headerRight: () => <LogoutButton/>}}/>
 
             <RootStack.Screen name="SearchCountry" component={SearchCountry} options={{ title: '' , headerStyle: {
             backgroundColor: '#7c3aed',
-          }, headerRight: () => <HeaderButton/>}}/>
+          }, headerRight: () => <LogoutButton/>}}/>
 
             <RootStack.Screen name="Cities" component={Cities} options={{ title: '' , headerStyle: {
             backgroundColor: '#7c3aed',
-          }, headerRight: () => <HeaderButton/>}}/>
+          }, headerRight: () => <LogoutButton/>}}/>
 
             <RootStack.Screen name="CityPopulation" component={CityPopulation} options={{ title: '' , headerStyle: {
             backgroundColor: '#7c3aed',
-          }, headerRight: () => <HeaderButton/>}}/> 
+          }, headerRight: () => <LogoutButton/>}}/> 
         </RootStack.Navigator>
     )
 }

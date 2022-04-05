@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import tw from 'twrnc';
 import { RootStackScreenProps } from '../navigation/NavigationTypes';
 import TextContainer from '../components/TextContainer';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, User} from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {auth } from '../firebase';
 import Toast from 'react-native-toast-message';
 
@@ -15,10 +15,10 @@ import Toast from 'react-native-toast-message';
  */
 export default function Login({ navigation }: RootStackScreenProps<"Login">) {
     
-
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
+    //Login listner that switches to homescreen upon login
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
           if (user) {
@@ -29,12 +29,9 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
         return unsubscribe
       }, [])
 
+    // Creates a new user and the user gets signed in
     const handleSignUp = () => {    
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential: { user: User; }) => {            
-            const user = userCredential.user;
-            console.log(user);
-        })
+        createUserWithEmailAndPassword(auth, email, password)      
         .catch((error: { code: string;}) => {
             const errorCode = error.code;
             Toast.show({
@@ -42,18 +39,13 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
                 text1: "Error",
                 text2: errorCode.replace("auth/", "")
             })
-            
-            
+       
         });
     }
 
+    // Already existing user gets signed in
     const handleSignIn = () => {
         signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential: { user: User; }) => {
-            const user = userCredential.user;
-            console.log(user);
-            
-        })
         .catch((error: { code: string; }) => {
             const errorCode = error.code;
             Toast.show({

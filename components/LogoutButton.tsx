@@ -6,7 +6,11 @@ import tw from 'twrnc';
 import { auth } from "../firebase";
 import { RootStackParamList } from "../navigation/NavigationTypes";
 
-export default function HeaderButton(){
+/**
+ * Creates a signout button that handels signout of firebase user
+ * @returns custom signout button
+ */
+export default function LogoutButton(){
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
 
     const handleSignOut = () => {
