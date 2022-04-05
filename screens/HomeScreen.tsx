@@ -5,6 +5,7 @@ import tw from 'twrnc';
 import TextContainer from '../components/TextContainer';
 import Toast from 'react-native-toast-message';
 import { auth } from '../firebase';
+import { useEffect } from 'react';
 
 /**
  * Homescreen that is shown at the start of the app
@@ -12,21 +13,22 @@ import { auth } from '../firebase';
  * @returns Homescreen view
  */
 export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScreen">) {
-  const userEmail = auth.currentUser?.email
 
-  if (userEmail) {
-    Toast.show({
-      type: "success",
-      text1: "Welcome",
-      text2: userEmail
-    })
-  }else{
-    Toast.show({
-      type: "error",
-      text1: "Error",
-      text2: "User email not found"
-    })
-  }
+  useEffect(() => {
+    if (auth.currentUser?.email) {
+      Toast.show({
+        type: "success",
+        text1: "Welcome",
+        text2: auth.currentUser?.email
+      })
+    }else{
+      Toast.show({
+        type: "error",
+        text1: "Error",
+        text2: "User email not found"
+      })
+    }
+}, [])
   
 
   return (
