@@ -7,8 +7,6 @@ import type {RootStackScreenProps} from "../navigation/NavigationTypes"
 import Toast from 'react-native-toast-message';
 import { JSONResponse } from '../types/NetworkType';
 
-
-
 //interface to define cities inside of data list
 interface City{
     name: string;

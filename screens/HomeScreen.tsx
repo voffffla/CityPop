@@ -19,7 +19,7 @@ export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScr
       Toast.show({
         type: "success",
         text1: "Welcome",
-        text2: auth.currentUser?.email
+        text2: auth.currentUser.email.replace(/@.*$/,"")
       })
     }else{
       Toast.show({
