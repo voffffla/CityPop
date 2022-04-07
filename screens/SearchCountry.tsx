@@ -5,7 +5,6 @@ import tw from 'twrnc';
 import { RootStackScreenProps } from '../navigation/NavigationTypes';
 
 
-
 /**
  * Search screen that is shown when searching by a country
  * @param navigation component that comes with the stacknavigator to navigate to another screen
@@ -14,7 +13,6 @@ import { RootStackScreenProps } from '../navigation/NavigationTypes';
 export default function SearchCountry({ navigation }: RootStackScreenProps<"SearchCountry">) {
 
     const [text, setText] = useState<string>(""); //To easly extract the content of the TextInput
-
     const changeHandler = (value: string) => {
         setText(value);
     };

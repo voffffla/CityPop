@@ -14,6 +14,7 @@ import { useEffect } from 'react';
  */
 export default function HomeScreen({ navigation }: RootStackScreenProps<"HomeScreen">) {
 
+  // To show a Toast that welcomes the user
   useEffect(() => {
     if (auth.currentUser?.email) {
       Toast.show({

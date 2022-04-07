@@ -10,10 +10,8 @@ import { RootStackScreenProps } from '../navigation/NavigationTypes';
  * @returns search screen for cities
  */
 export default function SearchCity({ navigation }: RootStackScreenProps<"SearchCity">) {
-    
 
     const [text, setText] = useState<string>(""); //To easly extract the content of the TextInput
-
     const changeHandler = (value: string) => {
         setText(value);
     };

@@ -58,7 +58,6 @@ export default function Login({ navigation }: RootStackScreenProps<"Login">) {
 
     }
 
-
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View style={tw.style("flex-1 items-center justify-center bg-gray-800")}>

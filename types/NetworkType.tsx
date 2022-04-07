@@ -1,5 +1,5 @@
 
-
+// Type for city object in result from fetch in Cites.tsx / CityPopulation.tsx
 type CityResults ={
     "adminCode1": string,
       "adminCodes1": Object,
@@ -19,7 +19,7 @@ type CityResults ={
       "toponymName": string,
 }
 
-
+// Type for response from fetch in Cites.tsx / CityPopulation.tsx
 export type JSONResponse = {
   geonames: Array<CityResults>
 }

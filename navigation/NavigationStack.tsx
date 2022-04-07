@@ -11,7 +11,7 @@ import { RootStackParamList } from './NavigationTypes';
 
 /**
  * Function that creates a stack navigator for navigating in the app.
- * The start page is HomeScreen
+ * The start page is Login
  * @returns StackNavigator
  */
 export default function NavStack(){
