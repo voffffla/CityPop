@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import NavStack from "./navigation/NavigationStack";
 import Toast from 'react-native-toast-message';
-import { toastConfig } from './components/ToastConfig';
+import { toastConfig } from './ToastConfig';
 
 export default function App() {
   return (
