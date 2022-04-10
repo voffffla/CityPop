@@ -25,4 +25,8 @@ INSTALLATION
 
 To set up the enviorment follow the steps on this site: https://reactnative.dev/docs/environment-setup
 
-When the enviorment is set up correctly simply run "npm install" in the directory to install all the needed packages.
+When the enviorment is set up correctly simply run:
+```
+npm install
+```
+in the directory to install all the needed packages.
